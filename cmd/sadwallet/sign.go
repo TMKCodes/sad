@@ -6,8 +6,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/sadnetwork/sad/cmd/sadnwallet/keys"
-	"github.com/sadnetwork/sad/cmd/sadnwallet/libsadnwallet"
+	"github.com/sadnetwork/sad/cmd/sadwallet/keys"
+	"github.com/sadnetwork/sad/cmd/sadwallet/libsadwallet"
 	"github.com/pkg/errors"
 )
 
