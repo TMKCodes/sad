@@ -17,14 +17,14 @@ import (
 )
 
 const (
-	defaultLogFilename          = "sedraminer.log"
-	defaultErrLogFilename       = "sedraminer_err.log"
+	defaultLogFilename          = "sadminer.log"
+	defaultErrLogFilename       = "sadminer_err.log"
 	defaultTargetBlockRateRatio = 2.0
 )
 
 var (
 	// Default configuration options
-	defaultAppDir     = util.AppDir("sadraminer", false)
+	defaultAppDir     = util.AppDir("sadminer", false)
 	defaultLogFile    = filepath.Join(defaultAppDir, defaultLogFilename)
 	defaultErrLogFile = filepath.Join(defaultAppDir, defaultErrLogFilename)
 	defaultRPCServer  = "localhost"
