@@ -23,7 +23,7 @@ $ go version
 
 ```bash
 $ git clone https://github.com/sadnetwork/sad
-$ cd sad/cmd/sedraminer
+$ cd sad/cmd/sadminer
 $ go install .
 ```
 
