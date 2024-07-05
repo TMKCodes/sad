@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/sadnetwork/sad/app/appmessage"
-	"github.com/sadnetwork/sad/cmd/sedraminer/templatemanager"
+	"github.com/sadnetwork/sad/cmd/sadminer/templatemanager"
 	"github.com/sadnetwork/sad/domain/consensus/model/externalapi"
 	"github.com/sadnetwork/sad/domain/consensus/utils/consensushashing"
 	"github.com/sadnetwork/sad/domain/consensus/utils/pow"
@@ -176,7 +176,7 @@ func getBlockForMining(mineWhenNotSynced bool) (*externalapi.DomainBlock, *pow.S
 		}
 		if !isSynced && !mineWhenNotSynced {
 			if shouldLog {
-				log.Warnf("sedrad is not synced. Skipping current block template")
+				log.Warnf("sadd is not synced. Skipping current block template")
 			}
 			time.Sleep(sleepTimeWhenNotSynced)
 			continue
@@ -188,7 +188,7 @@ func getBlockForMining(mineWhenNotSynced bool) (*externalapi.DomainBlock, *pow.S
 
 func templatesLoop(client *minerClient, miningAddr util.Address, errChan chan error) {
 	getBlockTemplate := func() {
-		template, err := client.GetBlockTemplate(miningAddr.String(), "sedraminer-"+version.Version())
+		template, err := client.GetBlockTemplate(miningAddr.String(), "sadminer-"+version.Version())
 		if nativeerrors.Is(err, router.ErrTimeout) {
 			log.Warnf("Got timeout while requesting block template from %s: %s", client.Address(), err)
 			reconnectErr := client.Reconnect()
