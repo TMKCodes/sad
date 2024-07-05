@@ -2,13 +2,13 @@ package netadapter
 
 import (
 	"fmt"
-	"github.com/sedracoin/sedrad/app/appmessage"
-	routerpkg "github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
+	"github.com/sadnetwork/sad/app/appmessage"
+	routerpkg "github.com/sadnetwork/sad/infrastructure/network/netadapter/router"
 	"github.com/pkg/errors"
 	"sync/atomic"
 
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/id"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/server"
+	"github.com/sadnetwork/sad/infrastructure/network/netadapter/id"
+	"github.com/sadnetwork/sad/infrastructure/network/netadapter/server"
 )
 
 // NetConnection is a wrapper to a server connection for use by services external to NetAdapter
