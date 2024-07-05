@@ -6,7 +6,7 @@ import (
 
 	"github.com/sadnetwork/sad/domain/consensus/utils/utxo"
 
-	"github.com/kaspanaet/go-secp256k1"
+	"github.com/kaspanet/go-secp256k1"
 	"github.com/sadnetwork/sad/app/appmessage"
 	"github.com/sadnetwork/sad/domain/consensus/model/externalapi"
 	"github.com/sadnetwork/sad/domain/consensus/utils/consensushashing"
