@@ -317,7 +317,7 @@ func TestMaxSeep(t *testing.T) {
 		params := &consensusConfig.Params
 		cfg := *consensusConfig
 		cfg.BlockCoinbaseMaturity = 0
-		cfg.PreDeflationaryPhaseBaseSubsidy = 20e6 * constants.SeepPersad
+		cfg.PreDeflationaryPhaseBaseSubsidy = 20e6 * constants.SeepPerSad
 		tc, teardown, err := consensus.NewFactory().NewTestConsensus(&cfg, "TestMaxSeep")
 		if err != nil {
 			t.Fatalf("Error setting up tc: %+v", err)
@@ -479,7 +479,7 @@ func TestMaxSeep(t *testing.T) {
 		unsignedTxWithLargeInputAndOutputAmount, err := libsadwallet.CreateUnsignedTransaction(publicKeys, minimumSignatures,
 			[]*libsadwallet.Payment{{
 				Address: address,
-				Amount:  22e6 * constants.SeepPersad,
+				Amount:  22e6 * constants.SeepPerSad,
 			}}, selectedUTXOsForTxWithLargeInputAndOutputAmount)
 		if err != nil {
 			t.Fatalf("CreateUnsignedTransactions: %+v", err)

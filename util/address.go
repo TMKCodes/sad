@@ -43,7 +43,7 @@ const (
 	Bech32PrefixSad
 
 	// Prefix for the dev network.
-	Bech32PrefixSaddev
+	Bech32PrefixSadDev
 
 	// Prefix for the test network.
 	Bech32PrefixSadTest

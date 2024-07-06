@@ -29,13 +29,13 @@ func isFieldExported(field reflect.StructField) bool {
 }
 
 // generateSedradMessage generates a wrapped SedradMessage with the given `commandValue`
-func generateSedradMessage(commandValue reflect.Value, commandDesc *commandDescription) (*protowire.SedradMessage, error) {
+func generateSedradMessage(commandValue reflect.Value, commandDesc *commandDescription) (*protowire.SadMessage, error) {
 	commandWrapper := reflect.New(commandDesc.typeof)
 	unwrapCommandValue(commandWrapper).Set(commandValue)
 
-	sedradMessage := reflect.New(reflect.TypeOf(protowire.SedradMessage{}))
+	sedradMessage := reflect.New(reflect.TypeOf(protowire.SadMessage{}))
 	sedradMessage.Elem().FieldByName("Payload").Set(commandWrapper)
-	return sedradMessage.Interface().(*protowire.SedradMessage), nil
+	return sedradMessage.Interface().(*protowire.SadMessage), nil
 }
 
 // pointerToValue returns a reflect.Value that represents a pointer to the given value

@@ -39,7 +39,7 @@ func parseCommand(args []string, commandDescs []*commandDescription) (*protowire
 		setField(commandValue, parameterValue, parameterDesc)
 	}
 
-	return generateSadMessage(commandValue, commandDesc)
+	return generateSedradMessage(commandValue, commandDesc)
 }
 
 func setField(commandValue reflect.Value, parameterValue reflect.Value, parameterDesc *parameterDescription) {

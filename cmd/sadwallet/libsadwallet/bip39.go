@@ -69,7 +69,7 @@ func extendedKeyFromMnemonicAndPath(mnemonic string, path string, params *dagcon
 func versionFromParams(params *dagconfig.Params) ([4]byte, error) {
 	switch params.Name {
 	case dagconfig.MainnetParams.Name:
-		return bip32.sadMainnetPrivate, nil
+		return bip32.SadMainnetPrivate, nil
 	case dagconfig.TestnetParams.Name:
 		return bip32.SadTestnetPrivate, nil
 	case dagconfig.DevnetParams.Name:

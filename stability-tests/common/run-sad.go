@@ -30,7 +30,7 @@ func RunSadForTesting(t *testing.T, testName string, rpcAddress string) func() {
 
 	isShutdown := uint64(0)
 	go func() {
-		err := sadRunCommand.Wait()
+		err := SadRunCommand.Wait()
 		if err != nil {
 			if atomic.LoadUint64(&isShutdown) == 0 {
 				panic(fmt.Sprintf("sad closed unexpectedly: %s. See logs at: %s", err, appDir))
@@ -39,7 +39,7 @@ func RunSadForTesting(t *testing.T, testName string, rpcAddress string) func() {
 	}()
 
 	return func() {
-		err := sadRunCommand.Process.Signal(syscall.SIGTERM)
+		err := SadRunCommand.Process.Signal(syscall.SIGTERM)
 		if err != nil {
 			t.Fatalf("Signal: %s", err)
 		}

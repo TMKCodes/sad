@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/sadnetwork/sad/version"
 	"os"
 	"time"
+
+	"github.com/sadnetwork/sad/version"
 
 	"github.com/sadnetwork/sad/infrastructure/network/netadapter/server/grpcserver/protowire"
 
@@ -35,7 +36,7 @@ func main() {
 	defer client.Disconnect()
 
 	if !cfg.AllowConnectionToDifferentVersions {
-		sedradMessage, err := client.Post(&protowire.SedradMessage{Payload: &protowire.SedradMessage_GetInfoRequest{GetInfoRequest: &protowire.GetInfoRequestMessage{}}})
+		sedradMessage, err := client.Post(&protowire.SadMessage{Payload: &protowire.SadMessage_GetInfoRequest{GetInfoRequest: &protowire.GetInfoRequestMessage{}}})
 		if err != nil {
 			printErrorAndExit(fmt.Sprintf("Cannot post GetInfo message: %s", err))
 		}
@@ -100,7 +101,7 @@ func postJSON(cfg *configFlags, client *grpcclient.GRPCClient, doneChan chan str
 }
 
 func prettifyResponse(response string) string {
-	sedradMessage := &protowire.SedradMessage{}
+	sedradMessage := &protowire.SadMessage{}
 	err := protojson.Unmarshal([]byte(response), sedradMessage)
 	if err != nil {
 		printErrorAndExit(fmt.Sprintf("error parsing the response from the RPC server: %s", err))
